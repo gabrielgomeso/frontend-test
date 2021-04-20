@@ -7,8 +7,6 @@
     </div>
     <div class="header-block">
       <p class="header-block--logo">
-
-      Logo
       </p>
     </div>
     <div class="header-block">
@@ -40,6 +38,7 @@ export default {
   color: $secondary-blue;
 
   // font formating
+  font-size: 1.5rem;
   font-weight: 600;
 
   &-block {
@@ -48,7 +47,7 @@ export default {
     align-items: center;
     justify-content: center;
     
-    padding: 5px;
+    padding: 10px;
     grid-gap: 5px;
 
     &--logo {
