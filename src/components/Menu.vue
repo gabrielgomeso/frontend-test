@@ -1,7 +1,8 @@
 <template>
   <nav class="navigation">
     <a href="" class="navigation-link">Minha Conta</a>
-    <a href="" class="navigation-link">Menu ˅</a>
+      
+    <a href="" class="navigation-link">Menu <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs" /></a>
 
   </nav>
 </template>
