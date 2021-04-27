@@ -1,18 +1,18 @@
 <template>
   <div class="content">
-    <p>
+    <p class="content-page">
       <font-awesome-icon :icon="['fas', 'chevron-left']" size="xs" />
       Minha conta
     </p>
 
+    <h1 class="content-title">Bolsas Favoritas</h1>
+    <p class="content-description">Adicione bolsas de cursos e faculdade do seu interesse e receba atualizações com as melhores ofertas disponíveis.</p>
+    
     <div>
       <div>Todos os semestres</div>
       <div>1° semestre de 2021</div>
       <div>2° semestre de 2021</div>
     </div>
-
-    <h1>Bolsas Favoritas</h1>
-    <p>Adicione bolsas de cursos e faculdade do seu interesse e receba atualizações com as melhores ofertas disponíveis.</p>
 
     <button>
       <font-awesome-icon class="plus-icon" :icon="['fas', 'plus']" size="5x" />
@@ -29,6 +29,22 @@
   background-color: $gray-background;
 
   padding: 20px;
+
+  &-page{
+    font-weight: 600;
+    color: $secondary-blue;
+
+    font-size: 1.2rem;
+    margin: 0 0 15px 0;
+  }
+
+  &-title{
+    margin: 0 0 10px 0;
+  }
+
+  &-description{
+    font-size: 1.3rem;
+  }
 
   .plus-icon{
     border: 5px solid $secondary-blue;
