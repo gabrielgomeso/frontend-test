@@ -16,7 +16,7 @@
 .footer {
   width: 100%;
   height: 8rem;
-  background-color: $secondary-blue;
+  background-color: #18ACC4;
 
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
   &-text {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #d1d1d1;
+    color: #ffffff;
 
     &--icon {
       margin: 0 5px 0 5px;

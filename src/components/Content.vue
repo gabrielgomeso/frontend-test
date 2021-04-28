@@ -25,7 +25,6 @@
 <style lang="scss">
 .content{
   width: 100%;
-  height: 100vh;
   background-color: $gray-background;
 
   padding: 20px;
@@ -72,8 +71,10 @@
     }
 
     &--option{
+      cursor: pointer;
       padding: 10px;
       border: 1px solid $secondary-blue;
+      border-top: 0;
     }
   }
   
@@ -82,10 +83,12 @@
     background: $gray-background;
     box-shadow: 1px 1px 4px 1px rgb(112, 112, 112);
     padding: 25px;
+    margin: 0 0 20px 0;
+
   }
 
   .plus-icon{
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
     
     padding: 10px;
     color: $secondary-blue;

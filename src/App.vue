@@ -3,6 +3,7 @@
     <Header msg="Gabriel" />
     <Menu />
     <Content />
+    <Contact />
     <Footer />
   </div>
 </template>
@@ -12,6 +13,8 @@
 import Header from "./components/Header.vue";
 import Menu from "./components/Menu.vue";
 import Content from "./components/Content.vue";
+import Contact from "./components/Contact.vue";
+
 import Footer from "./components/Footer.vue";
 
 
@@ -21,6 +24,7 @@ export default {
     Header,
     Menu,
     Content,
+    Contact,
     Footer
   },
 };
