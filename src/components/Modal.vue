@@ -1,6 +1,14 @@
 <script>
+
+import Database from "../../db.json";
+
 export default {
   name: "Modal",
+  data () {
+    return {
+      schools: Database,
+    };
+  },
   methods: {
     close() {
       this.$emit("close");
@@ -38,6 +46,8 @@ export default {
           <slot name="body" id="modalDescription">
             <label class="modal-label" for="cidade">SELECIONE SUA CIDADE</label>
             <select class="modal-select" name="cidade" id="cidade">
+              <font-awesome-icon :icon="['fas', 'times']" size="2x" />
+
               <option value="sjc">São José</option>
               <option value="carag">Caraguá</option>
               <option value="sp">São Paulo</option>
@@ -56,7 +66,19 @@ export default {
             <input type="checkbox" id="adistancia" name="adistancia" checked />
 
             <p class="modal-label">ATÉ QUANTO PODE PAGAR?</p>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="100"
+              class="slider"
+              id="myRange"
+            />
           </slot>
+
+          <li v-for="school in schools">
+            {{ school.course.name }}
+          </li>
         </section>
 
         <footer class="modal-footer">
@@ -85,6 +107,13 @@ export default {
   </transition>
 </template>
 <style lang="scss">
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -100,9 +129,11 @@ export default {
 .modal {
   padding: 20px;
   min-width: 100%;
+  height: auto;
   background: #ffffff;
   box-shadow: 2px 2px 20px 1px;
-  overflow-x: auto;
+  
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
@@ -135,20 +166,17 @@ export default {
   gap: 15px;
   position: relative;
 
-
-  .modal-label{
+  .modal-label {
     font-size: 1.1rem;
     font-weight: 800;
     letter-spacing: 0.5px;
   }
 
-   .modal-select{
-     border-radius: 5px;
-     padding: 10px;
-     border: 1px solid #D6D9D9;
-
-
-   }
+  .modal-select {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #d6d9d9;
+  }
 }
 
 .btn-close {
@@ -174,9 +202,9 @@ export default {
 }
 
 .btn-disabled {
-  color: #82898B;
-  background: #CACDCE;
-  border: 1px solid #82898B;
+  color: #82898b;
+  background: #cacdce;
+  border: 1px solid #82898b;
   border-radius: 2px;
   font-weight: 600;
   padding: 15px 15px 15px 15px;

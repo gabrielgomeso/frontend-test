@@ -34,6 +34,7 @@
 
 import Modal from "./Modal.vue";
 
+
 export default {
   name: "Content",
   components: {
