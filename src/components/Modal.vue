@@ -9,16 +9,15 @@ export default {
       schools: Database,
     };
   },
-  computed: {
-    uniqueCourses: function (){
-      let courses = [];
-      for(var i = 0; i <= this.schools.length; i++){
-        courses.push(this.schools[i])
-      }
-      console.log(courses[0][full_price]);
-      return courses;
-    }
-  },
+  // computed: {
+  //   uniqueCourses: function (){
+  //     let courses = [];
+  //     for(var i = 0; i <= this.schools.length; i++){
+  //       courses.push(this.schools[i])
+  //     }
+  //     return courses;
+  //   }
+  // },
   methods: {
     close() {
       this.$emit("close");
