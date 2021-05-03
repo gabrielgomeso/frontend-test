@@ -105,7 +105,7 @@ export default {
 
     &--option {
       cursor: pointer;
-      padding: 10px;
+      padding: 15px;
       border: 1px solid $secondary-blue;
       border-top: 0;
     }

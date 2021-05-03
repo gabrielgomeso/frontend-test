@@ -9,6 +9,16 @@ export default {
       schools: Database,
     };
   },
+  computed: {
+    uniqueCourses: function (){
+      let courses = [];
+      for(var i = 0; i <= this.schools.length; i++){
+        courses.push(this.schools[i])
+      }
+      console.log(courses[0][full_price]);
+      return courses;
+    }
+  },
   methods: {
     close() {
       this.$emit("close");
@@ -46,25 +56,22 @@ export default {
           <slot name="body" id="modalDescription">
             <label class="modal-label" for="cidade">SELECIONE SUA CIDADE</label>
             <select class="modal-select" name="cidade" id="cidade">
-              <font-awesome-icon :icon="['fas', 'times']" size="2x" />
-
-              <option value="sjc">São José</option>
-              <option value="carag">Caraguá</option>
-              <option value="sp">São Paulo</option>
+              <option :value="school.campus.city" v-for="(school, index) in schools" :key="index">{{school.campus.city}}</option>
             </select>
 
             <label class="modal-label" for="curso">SELECIONE SEU CURSO</label>
             <select class="modal-select" name="curso" id="curso">
-              <option value="cs">Ciencia da Computacao</option>
-              <option value="med">Medicina</option>
-              <option value="sp">São Paulo</option>
+              <option :value="school.course.name" v-for="(school, index) in schools" :key="index">{{school.course.name}}</option>
             </select>
             <p class="modal-label">COMO VOCÊ QUER ESTUDAR?</p>
-            <label for="presencial">Presencial</label>
-            <input type="checkbox" id="presencial" name="presencial" checked />
-            <label for="adistancia">A distância</label>
-            <input type="checkbox" id="adistancia" name="adistancia" checked />
-
+            <div class="checkbox-block">
+              <input type="checkbox" id="presencial" name="presencial" checked />
+              <label for="presencial">Presencial</label>
+            </div>
+            <div class="checkbox-block">
+              <input type="checkbox" id="adistancia" name="adistancia" checked />
+              <label for="adistancia">A distância</label>
+            </div>
             <p class="modal-label">ATÉ QUANTO PODE PAGAR?</p>
             <input
               type="range"
@@ -75,10 +82,10 @@ export default {
               id="myRange"
             />
           </slot>
-
-          <!-- <li v-for="school in schools">
-            {{ school.course.name }}
-          </li> -->
+          
+          <li v-for="(courses, index) in uniqueCourses" :key="index">
+            {{ courses }}
+          </li>
         </section>
 
         <footer class="modal-footer">
@@ -128,7 +135,7 @@ select {
 
 .modal {
   padding: 20px;
-  min-width: 100%;
+  width: 100%;
   height: auto;
   background: #ffffff;
   box-shadow: 2px 2px 20px 1px;
@@ -177,6 +184,12 @@ select {
     padding: 10px;
     border: 1px solid #d6d9d9;
   }
+
+  .checkbox-block{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 }
 
 .btn-close {
@@ -219,6 +232,12 @@ select {
 .modal-fade-enter-active,
 .modal-fade-leave-active {
   transition: opacity 0.5s ease;
+}
+
+@media (min-width: 800px) {
+  .modal {
+    width: 70%;
+  }
 }
 </style>
 
