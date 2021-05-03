@@ -23,8 +23,8 @@
         :icon="['fas', 'plus-circle']"
         size="5x"
       />
-      <h4>Adicionar bolsa</h4>
-      <p>Clique para adicionar bolsas de cursos do seu interesse</p>
+      <h4 class="btn-title">Adicionar bolsa</h4>
+      <p class="btn-text">Clique para adicionar bolsas de cursos do seu interesse</p>
     </button>
 
     <Modal v-show="isModalVisible" @close="closeModal" />
@@ -117,6 +117,16 @@ export default {
     box-shadow: 1px 1px 4px 1px rgb(112, 112, 112);
     padding: 25px;
     margin: 0 0 20px 0;
+
+
+    .btn-title{
+      color: black;
+    }
+
+    .btn-text{
+      font-weight: 400;
+      color: black;
+    }
   }
 
   .plus-icon {
@@ -131,8 +141,12 @@ export default {
   .content{
     width: 1280px;
     margin: auto;
-
   }  
+
+  .add-course {
+    width: 300px;
+    height: 450px;
+  }
 
 
 }

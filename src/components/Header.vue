@@ -110,7 +110,7 @@ export default {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .header {
     display: flex;
   }
@@ -121,10 +121,10 @@ export default {
   .desktop-header {
     width: 1280px;
     margin: auto;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: space-between;
-
+    grid-template-columns: auto 1fr auto;
     &-block {
       display: grid;
       grid-template-columns: auto auto 1fr;
