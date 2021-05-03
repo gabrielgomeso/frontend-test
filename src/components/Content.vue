@@ -126,4 +126,32 @@ export default {
     color: $secondary-blue;
   }
 }
+
+@media (min-width: 800px) {
+  .content{
+    width: 1280px;
+    margin: auto;
+
+  }  
+
+
+}
+@media (min-width: 460px) {
+  .content-filter{
+    flex-direction: row;
+    justify-content: flex-end;
+
+    &--option:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &--option:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    &--option {
+      border: 1px solid $secondary-blue;
+    }
+  }
+}
 </style>

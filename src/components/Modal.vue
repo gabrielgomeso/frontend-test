@@ -76,9 +76,9 @@ export default {
             />
           </slot>
 
-          <li v-for="school in schools">
+          <!-- <li v-for="school in schools">
             {{ school.course.name }}
-          </li>
+          </li> -->
         </section>
 
         <footer class="modal-footer">
